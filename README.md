@@ -9,7 +9,7 @@ No SaaS subscription. No GDPR headaches from third-party scripts. Just a single 
 > - No CSV export
 > - 6-month data retention
 >
-> **[Upgrade to the full version for €19 →](https://minimetrics.io)**
+> **[Upgrade to the full version for €19 →](https://mini-metrics.com)**
 > Full version adds: multiple sites, date filtering, CSV export, 18-month retention.
 
 ## Requirements
