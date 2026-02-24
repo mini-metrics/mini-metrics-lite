@@ -1,6 +1,6 @@
-# Mini Metrics Light
+# Mini Metrics Lite
 
-Mini Metrics Light is a self-hosted web analytics tool that gives you the essentials: pageviews, unique visitors, top pages, referrers, and geo data without tracking cookies, fingerprinting, or sending visitor data to third parties. Install it on your own server, point it at your site, and you own everything.
+Mini Metrics Lite is a self-hosted web analytics tool that gives you the essentials: pageviews, unique visitors, top pages, referrers, and geo data without tracking cookies, fingerprinting, or sending visitor data to third parties. Install it on your own server, point it at your site, and you own everything.
 No SaaS subscription. No GDPR headaches from third-party scripts. Just a single PHP file, a SQLite database, and a small JavaScript snippet.
 
 > **Light version limitations:**
