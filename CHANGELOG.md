@@ -33,6 +33,7 @@ The first numbered release of Lite: a rewrite of the dashboard and tracking.
 - Fixed: login didn't work over plain HTTP, and logging in or out jumped to the site root when Lite is
   installed in a subfolder.
 - Fixed: links pointed to the wrong website (minimetrics.io instead of mini-metrics.com).
+- The new Mini Metrics logo as the dashboard icon.
 - Added the `LICENSE` file (MIT).
 
 **Upgrading from the earlier Lite:** upload all files and keep your `config.php`. The new files `lite.php` and
