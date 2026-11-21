@@ -1,0 +1,310 @@
+/* Mini Metrics Lite: the whole dashboard style. Hand-written, no build step. */
+
+:root {
+    --paper: #f5f7fa;
+    --panel: #ffffff;
+    --ink: #16213d;
+    --muted: #5c667a;
+    --line: #d8dee8;
+    --blue: #2563eb;
+    --blue-dark: #1d4ed8;
+    --blue-soft: #e3ebfd;
+    --red: #b42318;
+    --amber: #fdf3d7;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; scrollbar-gutter: stable; }
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 15px/1.5 var(--font);
+    font-variant-numeric: tabular-nums;
+}
+
+a { color: var(--blue); text-underline-offset: 2px; }
+a:hover { color: var(--blue-dark); }
+
+:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+code, .mono { font-family: var(--mono); font-size: 0.9em; }
+code { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; padding: 0 4px; }
+
+h1, h2, p { margin: 0; }
+
+/* ---------------------------------------------------------------- window chrome */
+
+.win {
+    background: var(--panel);
+    border: 2px solid var(--ink);
+    border-radius: 8px;
+    box-shadow: 5px 5px 0 var(--ink);
+}
+
+.win-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    border-bottom: 2px solid var(--ink);
+    background: var(--blue-soft);
+    border-radius: 6px 6px 0 0;
+}
+
+.win-dot {
+    width: 11px;
+    height: 11px;
+    flex: none;
+    background: var(--blue);
+    border: 2px solid var(--ink);
+}
+
+.win-title {
+    font-size: 15px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.win-body { padding: 24px; }
+
+/* ---------------------------------------------------------------- login and error pages */
+
+body.center {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 16px;
+}
+
+.narrow { width: 100%; max-width: 380px; }
+
+.win-body h1 { font-size: 22px; margin-bottom: 16px; }
+.win-body > p + p { margin-top: 8px; }
+
+.login label { display: block; font-size: 14px; font-weight: 600; margin: 14px 0 4px; }
+
+.login input[type=text], .login input[type=password] {
+    width: 100%;
+    height: 40px;
+    padding: 0 10px;
+    font: inherit;
+    color: inherit;
+    background: #fff;
+    border: 1px solid #b9c2d0;
+    border-radius: 6px;
+}
+
+.login input:focus { border-color: var(--blue); outline: 2px solid var(--blue-soft); }
+.login .btn { width: 100%; margin-top: 20px; }
+
+.notice, .error { font-size: 14px; padding: 10px 12px; border-radius: 6px; margin-bottom: 8px; }
+.notice { background: var(--amber); }
+.error { background: #fde8e6; color: var(--red); }
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    padding: 0 18px;
+    font: inherit;
+    font-weight: 700;
+    color: #fff;
+    background: var(--blue);
+    border: 2px solid var(--ink);
+    border-radius: 6px;
+    box-shadow: 3px 3px 0 var(--ink);
+    cursor: pointer;
+}
+
+.btn:hover { background: var(--blue-dark); }
+.btn:active { transform: translate(3px, 3px); box-shadow: none; }
+.btn.small { height: 32px; padding: 0 12px; font-size: 14px; box-shadow: 2px 2px 0 var(--ink); }
+.btn.small:active { transform: translate(2px, 2px); }
+
+/* ---------------------------------------------------------------- page */
+
+.top, .page, .foot { max-width: 960px; margin: 0 auto; padding-left: 16px; padding-right: 16px; }
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    font-size: 17px;
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.brand:hover { color: var(--ink); }
+
+.pixel {
+    width: 18px;
+    height: 18px;
+    background: var(--blue);
+    border: 2px solid var(--ink);
+    box-shadow: 2px 2px 0 var(--ink);
+}
+
+.edition { font-weight: 500; color: var(--muted); }
+
+.logout { color: var(--muted); font-size: 14px; }
+
+.page { display: grid; gap: 20px; padding-bottom: 32px; }
+
+/* ---------------------------------------------------------------- summary window */
+
+.tabs {
+    display: flex;
+    gap: 4px;
+    padding: 14px 20px 0;
+    overflow-x: auto;
+}
+
+.tabs a {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.tabs a:hover { color: var(--ink); background: var(--paper); }
+.tabs a[aria-current] { color: var(--ink); background: var(--blue-soft); box-shadow: inset 0 0 0 2px var(--ink); }
+
+.figures {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    padding: 18px 20px 6px;
+}
+
+.figure {
+    font-size: clamp(24px, 6vw, 38px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    overflow-wrap: anywhere;
+}
+
+.caption { margin-top: 2px; font-size: 13px; color: var(--muted); }
+
+.chart { margin: 0; padding: 14px 20px 16px; }
+
+.chart svg {
+    display: block;
+    width: 100%;
+    height: 180px;
+    border-bottom: 2px solid var(--ink);
+    shape-rendering: crispEdges;
+}
+
+.bar .hit { fill: transparent; }
+.bar:hover .hit { fill: var(--paper); }
+.bar .fill { fill: var(--blue); }
+.bar .cap { fill: var(--ink); }
+.bar.now .fill { fill: #8fb0f6; }
+
+.axis {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* ---------------------------------------------------------------- panels and lists */
+
+.panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px 18px;
+    min-width: 0;
+}
+
+.panel h2, .panel summary { font-size: 15px; font-weight: 700; }
+
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+
+.list { list-style: none; margin: 10px 0 0; padding: 0; }
+
+.list li {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 6px 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, var(--blue-soft) var(--share, 0%), transparent var(--share, 0%));
+}
+
+.list li + li { margin-top: 3px; }
+.list.plain li { background: none; padding-left: 0; padding-right: 0; border-top: 1px solid var(--line); margin: 0; }
+
+.label { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.note { color: var(--muted); font-size: 13px; }
+.count { font-weight: 700; }
+.list time { color: var(--muted); font-size: 13px; white-space: nowrap; }
+.list.plain .note { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 40%; }
+
+.empty { margin-top: 10px; font-size: 14px; color: var(--muted); }
+
+/* ---------------------------------------------------------------- setup and recent views */
+
+details summary { cursor: pointer; list-style-position: inside; }
+details[open] summary { margin-bottom: 4px; }
+
+.steps { margin: 8px 0 0; padding-left: 22px; font-size: 14px; }
+.steps li + li { margin-top: 12px; }
+
+.snippet {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.snippet code {
+    flex: 1;
+    min-width: 0;
+    display: block;
+    padding: 8px 10px;
+    overflow-wrap: anywhere;
+}
+
+/* ---------------------------------------------------------------- footer */
+
+.foot { padding-bottom: 40px; font-size: 13px; color: var(--muted); display: grid; gap: 4px; }
+
+/* ---------------------------------------------------------------- phones */
+
+@media (max-width: 640px) {
+    .grid { grid-template-columns: 1fr; }
+    .figures { grid-template-columns: 1fr 1fr; }
+    .figures > :last-child { grid-column: 1 / -1; }
+    .chart svg { height: 140px; }
+    .snippet { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+}
